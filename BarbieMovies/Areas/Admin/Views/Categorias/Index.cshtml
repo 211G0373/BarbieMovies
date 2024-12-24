@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<BarbieMovies.Models.Categories>
 
+@{
+	Layout = "_LayoutAdmin";
+}
+
 <h1>Categorias</h1>
-<ol>
+<a href="~/admin/Categorias/Agregar/">Agregar</a>
+
+<ul>
 	@foreach (var c in Model)
 	{
 		<li>
 			@c.Name
-			<a href="~/admin/editar/@c.Id">Editar</a>
-			<a href="~/admin/eliminar/@c.Id">Eliminar</a>
+			<a href="~/admin/Categorias/editar/@c.Id">Editar</a>
+			<a href="~/admin/Categorias/eliminar/@c.Id">Eliminar</a>
 
 		</li>
 
 	}
-</ol>
+</ul>
