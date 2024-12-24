@@ -2,10 +2,11 @@
 
 <h1>Categorias</h1>
 <ol>
-	@foreach(var c in Model)
+	@foreach (var c in Model)
 	{
-		<li>@c.Name 
-		<a href="~/admin/editar/@c.Id">Editar</a>
+		<li>
+			@c.Name
+			<a href="~/admin/editar/@c.Id">Editar</a>
 			<a href="~/admin/eliminar/@c.Id">Eliminar</a>
 
 		</li>
