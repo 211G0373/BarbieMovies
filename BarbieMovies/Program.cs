@@ -9,10 +9,6 @@ builder.Services.AddDbContext<BarbieMovies.Models.BarbiemoviesContext>(
     );
 
 
-
-
-
-
 var app = builder.Build();
 app.UseStaticFiles();
 app.MapAreaControllerRoute(
