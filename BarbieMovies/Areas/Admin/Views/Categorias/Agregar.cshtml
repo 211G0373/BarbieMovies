@@ -6,15 +6,15 @@
         <h1>Agregar Categoría</h1>
 
         <label>Nombre:</label>
-        <input type="text" id="txtNombre" required="required" asp-for="Name" />
+        <input type="text" required="required" asp-for="Name" />
 
         <div class="botones">
             <p id="error">
                 @Html.ValidationSummary()
             </p>
-            <input type="submit" value="Agregar" id="btnAgregar" />
+            <input type="submit" value="Agregar" />
             <a href="~/Admin/Categorias">
-                <input type="button" value="Cancelar" id="btnCancelar" formnovalidate="formnovalidate" />
+                <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
             </a>
         </div>
     </div>
