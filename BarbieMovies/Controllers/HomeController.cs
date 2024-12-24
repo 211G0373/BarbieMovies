@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace BarbieMovies.Areas.Admin.Controllers
+namespace BarbieMovies.Controllers
 {
-    [Area("Admin")]
-
     public class HomeController : Controller
     {
         public IActionResult Index()
