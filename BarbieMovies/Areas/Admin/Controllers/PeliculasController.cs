@@ -1,11 +1,12 @@
 ﻿using BarbieMovies.Areas.Admin.Models;
 using BarbieMovies.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BarbieMovies.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
+    [Authorize]
     public class PeliculasController : Controller
     {
         public BarbiemoviesContext Context { get; }
@@ -16,6 +17,11 @@ namespace BarbieMovies.Areas.Admin.Controllers
             Context = context;
             Host = host;
         }
+
+
+
+        [Authorize(Roles = "Administrador")]
+
         [Route("/admin/Peliculas/index")]
         [Route("/admin/Peliculas")]
         public IActionResult Index()
@@ -23,6 +29,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
             
             return View(Context.Movies.OrderBy(x=>x.Title));
         }
+        [Authorize(Roles = "Administrador")]
+
         [Route("/admin/Peliculas/Agregar")]
         [HttpGet]
         public IActionResult Agregar()
@@ -34,6 +42,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
             };
             return View(vm);
         }
+        [Authorize(Roles = "Administrador")]
+
         [HttpPost]
         public IActionResult Agregar(AgregarViewModel? p, IFormFile foto)
         {
@@ -91,6 +101,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
             return View(p);
         }
 
+        [Authorize(Roles = "Administrador")]
+
         [Route("/admin/Peliculas/Editar/{id}")]
         [HttpGet]
         public IActionResult Editar(int id)
@@ -109,6 +121,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
             };
             return View(vm);
         }
+        [Authorize(Roles = "Administrador")]
+
         [HttpPost]
         public IActionResult Editar(AgregarViewModel p, IFormFile? foto)
         {
@@ -180,6 +194,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "Administrador")]
+
         [Route("/admin/Peliculas/Eliminar/{id}")]
         [HttpGet]
         public IActionResult Eliminar(int id)
@@ -192,6 +208,8 @@ namespace BarbieMovies.Areas.Admin.Controllers
 
             return View(Pelicula);
         }
+        [Authorize(Roles = "Administrador")]
+
         [HttpPost]
         public IActionResult Eliminar(Movies p)
         {

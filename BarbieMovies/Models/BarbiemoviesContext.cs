@@ -20,6 +20,8 @@ public partial class BarbiemoviesContext : DbContext
 
     public virtual DbSet<Movies> Movies { get; set; }
 
+    public virtual DbSet<Usuarios> Usuarios { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySql("server=localhost;user=root;database=barbiemovies;password=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.40-mysql"));
@@ -64,6 +66,27 @@ public partial class BarbiemoviesContext : DbContext
             entity.HasOne(d => d.Category).WithMany(p => p.Movies)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("movies_ibfk_1");
+        });
+
+        modelBuilder.Entity<Usuarios>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("usuarios");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Nombre)
+                .HasMaxLength(45)
+                .HasColumnName("nombre");
+            entity.Property(e => e.Password)
+                .HasMaxLength(45)
+                .HasColumnName("password");
+            entity.Property(e => e.Rol)
+                .HasMaxLength(45)
+                .HasColumnName("rol");
+            entity.Property(e => e.Usuario)
+                .HasMaxLength(45)
+                .HasColumnName("usuario");
         });
 
         OnModelCreatingPartial(modelBuilder);

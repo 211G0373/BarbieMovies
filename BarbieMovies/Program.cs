@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -9,7 +10,31 @@ builder.Services.AddDbContext<BarbieMovies.Models.BarbiemoviesContext>(
     );
 
 
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.SlidingExpiration = true;
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/AccesDenied";
+    }
+    );
+
+
+
+
+
 var app = builder.Build();
+
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+
+
 app.UseStaticFiles();
 app.MapAreaControllerRoute(
     name: "areas",
