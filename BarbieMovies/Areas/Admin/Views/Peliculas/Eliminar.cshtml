@@ -1,7 +1,42 @@
-﻿@model BarbieMovies.Areas.Admin.Models.AgregarViewModel
+﻿@model BarbieMovies.Models.Movies
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
 
 
 @{
     Layout = "_LayoutAdmin";
 }
+
+
+<form method="post" action="~/Admin/Peliculas/Eliminar" enctype="multipart/form-data">
+    <div>
+        <input type="hidden" asp-for="Id" />
+
+        <h1>Agregar Categoría</h1>
+        <label>Nombre:</label>
+        <input type="text" required="required" asp-for="Title" />
+
+      
+        <img id="imagePreview" src="~/img_peliculas/@(Model.Id).jpg" alt="Vista previa de la imagen" />
+
+
+
+
+
+
+
+
+
+        <div class="botones">
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <input type="submit" value="Agregar" />
+            <a href="~/Admin/Peliculas">
+                <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
+            </a>
+        </div>
+    </div>
+</form>
+<script>
+
+</script>

@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<BarbieMovies.Models.Movies>
+
 @{
+	Layout = "_LayoutAdmin";
 }
+
+<h1>Peliculas</h1>
+<a href="~/admin/Peliculas/Agregar/">Agregar</a>
+
+<ul>
+	@foreach (var p in Model)
+	{
+		<li>
+			@p.Title
+			<a href="~/admin/Peliculas/editar/@p.Id">Editar</a>
+			<a href="~/admin/Peliculas/eliminar/@p.Id">Eliminar</a>
+
+		</li>
+
+	}
+</ul>
