@@ -1,0 +1,7 @@
+:root{
+    --Fondo:#ffe2f8;
+    --Buttons:#000000;
+}
+html{
+    background-color: var(--Fondo);
+}

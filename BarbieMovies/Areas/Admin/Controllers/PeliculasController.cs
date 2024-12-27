@@ -50,11 +50,11 @@ namespace BarbieMovies.Areas.Admin.Controllers
 
             //foto
 
-            if (foto.ContentType != "image/jpeg")
-            {
-                ModelState.AddModelError("", "Solo están permitidas imagenes .jpg");
+            //if (foto.ContentType != "image/jpeg")
+            //{
+            //    ModelState.AddModelError("", "Solo están permitidas imagenes .jpg");
                 
-            }
+            //}
             if (foto.Length > 1024 * 1024 * 5)
             {
                 ModelState.AddModelError("", "No se permiten imagenes mayores a 5MB");
@@ -128,11 +128,11 @@ namespace BarbieMovies.Areas.Admin.Controllers
         {
             if (foto != null)
             {
-                if (foto.ContentType != "image/jpeg")
-                {
-                    ModelState.AddModelError("", "Solo están permitidas imagenes .jpg");
+                //if (foto.ContentType != "image/jpeg")
+                //{
+                //    ModelState.AddModelError("", "Solo están permitidas imagenes .jpg");
 
-                }
+                //}
                 if (foto.Length > 1024 * 1024 * 5)
                 {
                     ModelState.AddModelError("", "No se permiten imagenes mayores a 5MB");
@@ -145,7 +145,7 @@ namespace BarbieMovies.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "a");
             }
-            else if (Context.Movies.Any(x => x.Title == p.Pelicula.Title))
+            else if (Context.Movies.Any(x => x.Title == p.Pelicula.Title && x.Id != p.Pelicula.Id))
             {
                 ModelState.AddModelError("", "a");
 
