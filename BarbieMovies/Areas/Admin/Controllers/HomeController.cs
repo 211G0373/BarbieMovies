@@ -7,6 +7,7 @@ namespace BarbieMovies.Areas.Admin.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+
         [Route("/admin/home/index")]
         [Route("/admin/home")]
         [Route("/admin")]

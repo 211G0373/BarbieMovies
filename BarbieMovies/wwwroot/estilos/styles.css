@@ -1,7 +1,172 @@
 :root{
-    --Fondo:#ffe2f8;
+    --col1:#ff00a6;
+    --col2:#db3e86;
+    --col3:#71aafa;
+    --col4:#d830a5;
+    --col5:#eaa6d0;
+
+
     --Buttons:#000000;
 }
-html{
-    background-color: var(--Fondo);
+*{
+    margin: 0px;
+    padding: 0px;
 }
+html{
+    background-color: var(--col5);
+    width: 100%;
+    font-family: monospace;
+
+}
+
+header{
+    background-color: var(--col1);
+    width: 100%;
+}
+header img
+{
+    margin-left: 20px;
+    width: 100px;
+}
+section img{
+    width: 100%;
+}
+.ImgPelicula{
+    width: 100%;
+    height: 350px;
+
+}
+
+main{
+
+    width: 100;
+    
+}
+.ContIndex{
+    width: 90%;
+    margin: 0px auto 0px auto;
+    margin-top: -70px;
+}
+.ContBsuqeda{
+    width: 90%;
+    margin: 0px auto 0px auto;
+    margin-top: -200px;
+}
+.ContPelicula{
+    width: 80%;
+    margin: 0px auto 0px auto;
+  
+    
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-top: -200px;
+    margin-bottom: 100px;
+}
+.ContPelicula div :nth-child(2){
+    color: var(--col1);
+}
+.ContPelicula img{
+    width: 90%;
+    box-shadow: #ca6cae70 5px 5px 5px;
+    border-radius: 20px;
+    grid-row: 1 / 10;
+}
+
+.categorias{
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+
+.Movies{
+    
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+main a{
+    box-shadow: #ca6cae70 5px 5px 5px;
+
+
+    width: 250px;
+    color: white;
+    background-color: var(--col3);
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+
+}
+a label{
+    text-wrap: wrap;
+    margin: 6px;
+    font-family: monospace;
+}
+
+main a:hover{
+    background-color: var(--col1);
+
+    box-shadow: #d830a670 10px 10px 10px;
+    transform: scale(1.05);
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+header form{
+    width: 100%;
+}
+header input{
+    border-radius: 5px;
+
+    border: none;
+    height: 30px;
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+header input[type="submit"] {
+    width: 30px;
+    background-color: #d8008c;
+    background-image: url(images/lupa.png);
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+.ContIndex h1{
+    color: var(--col2);
+    margin: 20px;
+    font-size: 30px;
+}
+
+
+  .carousel {
+    z-index: -20;
+    
+    width: 100%;
+    aspect-ratio: 21/9;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 1s;
+
+  }
+  
+  .carousel-image {
+
+    min-width: 100%;
+    height: auto;
+  }
+  

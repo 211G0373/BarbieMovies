@@ -1,0 +1,37 @@
+﻿@model BarbieMovies.Models.ViewModels.BusquedaViewModel
+@{
+    Layout = "_Layout";
+}
+<div class="ContBsuqeda">
+
+
+    <div class="categorias">
+
+        @if(Model.peliculas.Any()){
+            <h1>@Model.peliculas.Count() resultados para "@(Model.busqueda)"</h1>
+
+            <div class="Movies">
+                @foreach (var m in Model.peliculas)
+                {
+                    <a href="~/Pelicula/@(m.Title.Replace(" ","-"))">
+                        <img src="~/img_peliculas/@(m.Id).jpg" class="ImgPelicula" alt="Alternate Text" />
+                        <label>@m.Title</label>
+                    </a>
+                }
+            </div>
+        }else{
+            <h1>No hay resultados para "@(Model.busqueda)"</h1>
+        }
+
+       
+    </div>
+
+
+
+</div>
+
+
+
+
+
+

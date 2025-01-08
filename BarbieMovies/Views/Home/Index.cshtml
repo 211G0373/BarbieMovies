@@ -1,5 +1,34 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
+
+
+
+
+@model IEnumerable<BarbieMovies.Models.Categories>
 @{
+    Layout = "_Layout";
 }
+<div class="ContIndex">
+    @foreach (var c in Model) {
+    
+    <div class="categorias">
+        <h1>@c.Name</h1>
+        <div class="Movies">
+            @foreach (var m in c.Movies)
+            {
+                <a href="~/Pelicula/@(m.Title.Replace(" ","-"))">
+                    <img src="~/img_peliculas/@(m.Id).jpg" class="ImgPelicula" alt="Alternate Text" />
+                    <label>@m.Title</label>
+                </a>
+            }
+        </div>
+    </div>
+   
+
+}
+</div>
+
+
+
+
+
+

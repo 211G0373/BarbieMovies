@@ -1,0 +1,30 @@
+﻿@model BarbieMovies.Models.Movies
+@{
+	Layout = "_Layout";
+}
+<div class="ContPelicula">
+	<img src="~/img_peliculas/@(Model.Id).jpg" alt="Alternate Text" />
+
+	<div>
+		<h1>Titulo</h1>
+		<h1>@Model.Title</h1>
+	</div>
+	<div>
+		<h1>Año de estreno</h1>
+		<h1>@Model.ReleaseYear</h1>
+	</div>
+	<div>
+		<h1>Director</h1>
+		<h1>@Model.Director</h1>
+	</div>	
+	<div>
+		<h1>Duracion</h1>
+		<h1>@Model.DurationMinutes Minutos</h1>
+	</div>	
+	<div>
+		<h1>Categoria</h1>
+		<h1>@Model.Category.Name</h1>
+
+	</div>
+
+</div>

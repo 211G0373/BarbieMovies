@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="~/estilos/styles.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <a href="#">
+            <img src="~/estilos/images/barbie-logo-01-freelogovectors.net_.png" alt="Alternate Text" />
+        </a>
+
+        <form action="~/buscar/" method="get"><input type="search" name="busqueda" value="" placeholder="Buscar"/>
+            <input type="submit"  value="" /></form>
+
+    </header>
+        <div class="carousel">
+            <div class="carousel-track">
+                <img src="~/estilos/images/k.png" alt="Imagen 1" class="carousel-image">
+
+                <img src="~/estilos/images/1.png" alt="Imagen 1" class="carousel-image">
+                <img src="~/estilos/images/2.png" alt="Imagen 2" class="carousel-image">
+                <img src="~/estilos/images/3.png" alt="Imagen 2" class="carousel-image">
+            <img src="~/estilos/images/Proyecto nuevo (3).png" alt="Imagen 2" class="carousel-image">
+
+              
+            </div>
+        </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <script>
+                const track = document.querySelector('.carousel-track');
+        const images = document.querySelectorAll('.carousel-image');
+        let currentIndex = 0;
+
+        function moveCarousel() {
+          currentIndex = (currentIndex + 1) % images.length;
+          const offset = -currentIndex * 100; // Desplaza el carrusel al siguiente elemento
+          track.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Cambiar de imagen cada 3 segundos
+        setInterval(moveCarousel, 3000);
+
+
+    </script>
+</body>
+</html>
+
+
