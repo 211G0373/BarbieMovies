@@ -39,10 +39,10 @@ namespace BarbieMovies.Areas.Admin.Controllers
         {
             if (string.IsNullOrWhiteSpace(c.Name))
             {
-                ModelState.AddModelError("", "");
+                ModelState.AddModelError("", "Ingrese el nombre");
             }else if (Context.Categories.Any(x => x.Name == c.Name))
             {
-                ModelState.AddModelError("", "");
+                ModelState.AddModelError("", "Esa categoria ya esta registrada");
             }
 
             if (ModelState.IsValid)
@@ -68,11 +68,11 @@ namespace BarbieMovies.Areas.Admin.Controllers
         {
             if (string.IsNullOrWhiteSpace(c.Name))
             {
-                ModelState.AddModelError("", "");
+                ModelState.AddModelError("", "Ingrese el nombre");
             }
             else if (Context.Categories.Any(x => x.Name == c.Name && x.Id!=c.Id))
             {
-                ModelState.AddModelError("", "");
+                ModelState.AddModelError("", "Esa categoria ya esta registrada");
             }
             if (ModelState.IsValid)
             {

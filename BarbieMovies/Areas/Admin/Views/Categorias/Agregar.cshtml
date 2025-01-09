@@ -3,26 +3,27 @@
 
 
 @{
-    Layout = "_LayoutAdmin";
+	Layout = "_LayoutAdmin";
 }
 
 
+<div class="ContForm">
+	<form class="FormAdCat" method="post" action="~/Admin/Categorias/Agregar">
+	
+			<h1>Agregar Categoría</h1>
 
-<form method="post" action="~/Admin/Categorias/Agregar">
-    <div>
-        <h1>Agregar Categoría</h1>
-
-        <label>Nombre:</label>
-        <input type="text" required="required" asp-for="Name" />
-
-        <div class="botones">
-            <p id="error">
-                @Html.ValidationSummary()
-            </p>
-            <input type="submit" value="Agregar" />
-            <a href="~/Admin/Categorias">
-                <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
-            </a>
-        </div>
-    </div>
-</form>
+			<label>Nombre:</label>
+			<input type="text" required="required" asp-for="Name" />
+		<p id="error">
+			@Html.ValidationSummary()
+		</p>
+			<div class="botones">
+				
+				<input type="submit" value="Agregar" />
+				<a href="~/Admin/Categorias">
+					<input type="button" value="Cancelar" formnovalidate="formnovalidate" />
+				</a>
+			</div>
+		
+	</form>
+</div>

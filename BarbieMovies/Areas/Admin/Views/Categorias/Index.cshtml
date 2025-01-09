@@ -4,18 +4,44 @@
 	Layout = "_LayoutAdmin";
 }
 
-<h1>Categorias</h1>
-<a href="~/admin/Categorias/Agregar/">Agregar</a>
 
-<ul>
+<div class="ContAdmin">
+<h1>Categorias</h1>
+
+<div class="contCategorias">
+
+
 	@foreach (var c in Model)
 	{
-		<li>
-			@c.Name
-			<a href="~/admin/Categorias/editar/@c.Id">Editar</a>
-			<a href="~/admin/Categorias/eliminar/@c.Id">Eliminar</a>
+			<div>
+				<h1>
+					@c.Name
 
-		</li>
+
+				</h1>
+			<div class="Options">
+
+
+					<a href="~/admin/Categorias/editar/@c.Id">Editar</a>
+					<a href="~/admin/Categorias/eliminar/@c.Id">Eliminar</a>
+			</div>
+			
+
+		</div>
+
 
 	}
-</ul>
+		<div class="CatAdd">
+			<a href="~/admin/Categorias/Agregar/">Agregar</a>
+	 </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+

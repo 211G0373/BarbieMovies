@@ -6,12 +6,11 @@
     Layout = "_LayoutAdmin";
 }
 
-
-<form method="post" action="~/Admin/Peliculas/Eliminar" enctype="multipart/form-data">
-    <div>
+<div class="ContForm">
+    <form class="FormAdCat" method="post" action="~/Admin/Peliculas/Eliminar" enctype="multipart/form-data">
         <input type="hidden" asp-for="Id" />
 
-        <h1>Agregar Categoría</h1>
+        <h1>Eliminar Pelicula</h1>
         <label>Nombre:</label>
         <input type="text" required="required" asp-for="Title" />
 
@@ -24,16 +23,16 @@
 
 
 
-
+        <p id="error">
+            @Html.ValidationSummary()
+        </p>
 
         <div class="botones">
-            <p id="error">
-                @Html.ValidationSummary()
-            </p>
+           
             <input type="submit" value="Eliminar" />
             <a href="~/Admin/Peliculas">
                 <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
             </a>
         </div>
-    </div>
 </form>
+</div>

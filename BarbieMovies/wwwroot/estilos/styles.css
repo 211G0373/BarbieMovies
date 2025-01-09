@@ -12,13 +12,15 @@
     margin: 0px;
     padding: 0px;
 }
+
 html{
     background-color: var(--col5);
     width: 100%;
     font-family: monospace;
-
 }
-
+header{
+    text-wrap: nowrap;
+}
 header{
     background-color: var(--col1);
     width: 100%;
@@ -28,6 +30,14 @@ header img
     margin-left: 20px;
     width: 100px;
 }
+.logout{
+margin-left: 20px;
+
+}
+.logout img{
+    margin-top: 4px;
+    width: 30px;
+}
 section img{
     width: 100%;
 }
@@ -36,16 +46,200 @@ section img{
     height: 350px;
 
 }
-
 main{
+    width: 100%;
+}
 
-    width: 100;
+.ContAdmin{
+    width: 80%;
+    margin: 0px auto 0px auto;
+  
+    padding: 30px;
+    
+    border-radius: 30px;
+    background-color: white;
+    margin-top: -200px;
+}
+.ContForm{
+    width: 500px;
+    margin: 0px auto 0px auto;
+  
+    padding: 30px;
+    
+    border-radius: 30px;
+    background-color: var(--col1);
+    color: white;
+    margin-top: -200px;
+}
+.contPeliculas{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.contCategorias{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.contPeliculas div {
+    border-radius: 10px; overflow: hidden;
+    height: 310px;
+    width: 200px;
+    background-color: var(--col3);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contPeliculas div img{
+    width: 100%;
+    height: 250px;
+
+}
+
+.contCategorias div {
+    height: 100px;
+    width: 150px;
+    background-color: var(--col3);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.contPeliculas h1{
+    font-size: 10px;
+    text-align: center;
+    align-content: center;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.contPeliculas div .Options{
+    height: 30px;
+   background-color: black;
+   display: flex;
+}
+
+.contPeliculas div .Options a{
+    width: 50%;
+    height: 100%;
+    background-color: #91bfff;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    border:#71aafa 1px solid;
+}
+.contPeliculas div:hover{
+    transform: scale(1.05);
+    box-shadow: #ca6cae70 5px 5px 5px;
+
+}
+.contPeliculas div .Options a:hover{
+    box-shadow: none;
+    background-color: var(--col1);
+
+}
+.contPeliculas a:hover{
+    box-shadow: none;
+    background-color: var(--col1);
+
+}
+
+
+
+
+
+
+
+
+
+.contCategorias h1{
+    text-align: center;
+    align-content: center;
+    height: 70px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.contCategorias div .Options{
+    height: 30px;
+   background-color: black;
+   display: flex;
+}
+
+.contCategorias div .Options a{
+    width: 50%;
+    height: 100%;
+    background-color: #91bfff;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    border:#71aafa 1px solid;
+}
+.contCategorias div:hover{
+    transform: scale(1.05);
+    box-shadow: #ca6cae70 5px 5px 5px;
+
+}
+.contCategorias div .Options a:hover{
+    box-shadow: none;
+    background-color: var(--col1);
+
+}
+.contCategorias a:hover{
+    box-shadow: none;
+    background-color: var(--col1);
+
+}
+.ContIndexAdmin{
+   width: 100%;
+    
+    
+ display: flex;
+   flex-wrap: wrap;
+   
+   gap: 20px;
+    justify-content: center;
+}
+.ContIndexAdmin a{
+
+    box-shadow: #ca6cae70 5px 5px 5px;
+
+
+   
+    color: white;
+    background-color: var(--col3);
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+text-decoration: none;
+
+    height: 100px;
+    width: 500px;
+    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+
+
+
+}
+.contCategorias{
+    width: 90%;
     
 }
 .ContIndex{
     width: 90%;
     margin: 0px auto 0px auto;
-    margin-top: -70px;
+    margin-top: -200px;
 }
 .ContBsuqeda{
     width: 90%;
@@ -75,7 +269,20 @@ main{
     border-radius: 20px;
     grid-row: 1 / 10;
 }
+.CatAdd{
+    display: flex;
 
+}
+.CatAdd a{
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    
+}
 .categorias{
     border-radius: 30px;
     background-color: white;
@@ -90,7 +297,7 @@ main{
     gap: 20px;
     flex-wrap: wrap;
 }
-main a{
+.ContIndex a{
     box-shadow: #ca6cae70 5px 5px 5px;
 
 
@@ -102,7 +309,21 @@ main a{
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s;
+text-decoration: none;
+}
+.ContBsuqeda a{
+    box-shadow: #ca6cae70 5px 5px 5px;
 
+
+    width: 250px;
+    color: white;
+    background-color: var(--col3);
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+text-decoration: none;
 }
 a label{
     text-wrap: wrap;
@@ -117,20 +338,27 @@ main a:hover{
     transform: scale(1.05);
 }
 header{
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 
 }
-header form{
-    width: 100%;
+header h1{
+    font-size: 2rem;
+    color: white;
 }
-header input{
+header form{
+    margin-left: 20px;
+    width: 40%;
+}
+header form input{
     border-radius: 5px;
 
     border: none;
     height: 30px;
-    width: 40%;
+    width: 100%;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -147,13 +375,82 @@ header input[type="submit"] {
     margin: 20px;
     font-size: 30px;
 }
+.FormAdCat{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.FormAdCat label{
+    margin-top: 20px;
+    
+margin-bottom: 10px;
+}
+
+.FormAdCat div{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    gap: 10px;
+    align-content: center;
+    justify-content: center;
+}
+.FormAdCat .botones :first-child{
+background-color: var(--col5);
+border-radius: 5px;
+height: 30px;
+margin: 0px;
+padding: 0px;
+border: none;
+font-size: 20px;
+width: 30%;
+}
+.FormAdCat input[type=Text],.FormAdCat input[type=number],.FormAdCat input[type=select],.FormAdCat input[type=password]{
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+    font-size: 20px;
+    
+}
+.FormAdCat input[type=file]{
+    margin-bottom: 10px;
+}
+.customselect{
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.FormAdCat .botones a :first-child{
+    background-color: var(--col5);
+    border-radius: 5px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 20px;
+    width: 100%;
+    }
+
+    .FormAdCat .botones a{
+        width: 30%;
+    }
+    .FormAdCat .botones a:hover{
+        transform: none;
+        box-shadow: none;
+    }
+
 
 
   .carousel {
     z-index: -20;
     
     width: 100%;
-    aspect-ratio: 21/9;
+    height: 400px;
     overflow: hidden;
     position: relative;
   }

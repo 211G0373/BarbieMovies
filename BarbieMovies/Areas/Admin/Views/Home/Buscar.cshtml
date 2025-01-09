@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BarbieMovies.Models.Movies>
+﻿@model BarbieMovies.Models.ViewModels.BusquedaViewModel
 
 @{
 	Layout = "_LayoutAdmin";
@@ -8,12 +8,12 @@
 
 
 <div class="ContAdmin">
-	<h1>Peliculas</h1>
-
+	
+		@if(Model.peliculas.Any()){
+            <h1>@Model.peliculas.Count() resultados para "@(Model.busqueda)"</h1>
 	<div class="contPeliculas">
 
-
-		@foreach (var c in Model)
+		@foreach (var c in Model.peliculas)
 		{
 			<div>
 				<img src="~/img_peliculas/@(c.Id).jpg" alt="Alternate Text" />
@@ -32,15 +32,19 @@
 
 
 		}
-		<div class="CatAdd">
-			<a href="~/admin/Peliculas/Agregar/">Agregar</a>
-		</div>
+		
 
 
 
 
 
 	</div>
+	}
+	else
+	{
+		<h1>No hay resultados para "@(Model.busqueda)"</h1>
+	}
+
 </div>
 
 

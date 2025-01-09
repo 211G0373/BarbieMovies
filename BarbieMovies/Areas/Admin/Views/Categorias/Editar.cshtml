@@ -7,22 +7,21 @@
     Layout = "_LayoutAdmin";
 }
 
-
-<form method="post" action="~/Admin/Categorias/Editar">
-    <div>
+    <div class="ContForm">
+<form class="FormAdCat" method="post" action="~/Admin/Categorias/Editar">
         <h1>Editar Categoría</h1>
         <input type="hidden" asp-for="Id" />
         <label>Nombre:</label>
         <input type="text" required="required" asp-for="Name" />
-
+        <p id="error">
+            @Html.ValidationSummary()
+        </p>
         <div class="botones">
-            <p id="error">
-                @Html.ValidationSummary()
-            </p>
+           
             <input type="submit" value="Guardar" />
             <a href="~/Admin/Categorias">
                 <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
             </a>
         </div>
-    </div>
 </form>
+    </div>

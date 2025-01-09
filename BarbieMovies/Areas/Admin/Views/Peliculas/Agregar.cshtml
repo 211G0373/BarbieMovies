@@ -6,9 +6,8 @@
     Layout = "_LayoutAdmin";
 }
 
-
-<form method="post" action="~/Admin/Peliculas/Agregar" enctype="multipart/form-data">
-    <div>
+<div class="ContForm">
+	<form class="FormAdCat" method="post" action="~/Admin/Peliculas/Agregar" enctype="multipart/form-data">
         <h1>Agregar Categoría</h1>
         <label>Nombre:</label>
         <input type="text" required="required" asp-for="Pelicula.Title" />
@@ -23,13 +22,13 @@
         <input type="number" required="required" asp-for="Pelicula.DurationMinutes" />
 
         <label>Categoria</label>
-        <select  asp-for="Pelicula.CategoryId"
+        <select class="customselect"  asp-for="Pelicula.CategoryId"
                 asp-items="@(new SelectList(Model.Categorias,"Id","Name"))">
             <option selected="selected" value="">-- Seleccionar categoria --</option>
         </select>
 
         <label>Imagen:</label>
-        <input required type="file" id="fileUpload1" accept="image/jpg" name="foto" />
+        <input class="customselect" required type="file" id="fileUpload1" accept="image/jpg" name="foto" />
 
         <img id="imagePreview" src="~/img_frutas/no-disponible.png" alt="Vista previa de la imagen" />
 
@@ -38,20 +37,21 @@
 
 
 
-
+        <p id="error">
+            @Html.ValidationSummary()
+        </p>
 
 
         <div class="botones">
-            <p id="error">
-                @Html.ValidationSummary()
-            </p>
+          
             <input type="submit" value="Agregar" />
             <a href="~/Admin/Peliculas">
                 <input type="button" value="Cancelar" formnovalidate="formnovalidate" />
             </a>
         </div>
-    </div>
 </form>
+</div>
+
 <script>
     function mostrarImagen(input){
         if (input.files && input.files[0]){

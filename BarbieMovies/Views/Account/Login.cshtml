@@ -1,34 +1,41 @@
-﻿<!DOCTYPE html>
+﻿@model BarbieMovies.Models.Categories
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>FruitStore - La mejor fruteria de la Web</title>
 
-</head>
-<body>
-    <header></header>
+@{
+	Layout = "_Layout";
+}
 
-    <main>
-        <form method="post" action="~/Account/Login">
-            <div>
-                <h1>Iniciar sesión</h1>
 
-                <label>Usuario</label>
-                <input type="text" required="required" name="user" />
-                <label>Contraseña</label>
-                <input type="password" required="required" name="password" />
+<div class="ContForm">
+    <form class="FormAdCat" method="post" action="~/Account/Login">
+      
+            <h1>Iniciar sesión</h1>
 
-                <div class="botones">
-                    <p id="error">
-                        @Html.ValidationSummary()
-                    </p>
-                    <input type="submit" value="Entrar" />
+            <label>Usuario</label>
+            <input type="text" required="required" name="user" />
+            <label>Contraseña</label>
+            <input type="password" required="required" name="password" />
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <div class="botones">
+               
+                <input type="submit" value="Entrar" />
 
-                </div>
             </div>
-        </form>
+        
+    </form>
+</div>
 
-    </main>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+

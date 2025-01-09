@@ -62,27 +62,27 @@ namespace BarbieMovies.Areas.Admin.Controllers
 
             //pelicula
             if (string.IsNullOrWhiteSpace(p.Pelicula.Title)){
-                ModelState.AddModelError("", "a");
+                ModelState.AddModelError("", "Falta el titulo");
             }else if (Context.Movies.Any(x => x.Title == p.Pelicula.Title))
             {
-                ModelState.AddModelError("", "a");
+                ModelState.AddModelError("", "Ese titulo ya existe");
 
             }
             if (DateTime.Today.Year < p.Pelicula.ReleaseYear || p.Pelicula.ReleaseYear < 1900)
             {
-                ModelState.AddModelError("", "b");
+                ModelState.AddModelError("", "El año es anterior a la invencion de barbie o aun no llega");
             }
             if (string.IsNullOrWhiteSpace(p.Pelicula.Director))
             {
-                ModelState.AddModelError("", "c");
+                ModelState.AddModelError("", "Ingrese el nombre del director");
             }
             if(p.Pelicula.DurationMinutes<=0)
             {
-                ModelState.AddModelError("", "d");
+                ModelState.AddModelError("", "Ingrese un numero mayor que 0");
             }
             if (!Context.Categories.Any(x=>x.Id== p.Pelicula.CategoryId))
             {
-                ModelState.AddModelError("", "e");
+                ModelState.AddModelError("", "La categoria no existe");
             }
 
             if (ModelState.IsValid)
@@ -143,28 +143,28 @@ namespace BarbieMovies.Areas.Admin.Controllers
             //pelicula
             if (string.IsNullOrWhiteSpace(p.Pelicula.Title))
             {
-                ModelState.AddModelError("", "a");
+                ModelState.AddModelError("", "Ingrese el titulo");
             }
             else if (Context.Movies.Any(x => x.Title == p.Pelicula.Title && x.Id != p.Pelicula.Id))
             {
-                ModelState.AddModelError("", "a");
+                ModelState.AddModelError("", "Ese titulo ya existe");
 
             }
             if (DateTime.Today.Year < p.Pelicula.ReleaseYear || p.Pelicula.ReleaseYear < 1900)
             {
-                ModelState.AddModelError("", "b");
+                ModelState.AddModelError("", "El año es anterior a la invencion de barbie o aun no llega");
             }
             if (string.IsNullOrWhiteSpace(p.Pelicula.Director))
             {
-                ModelState.AddModelError("", "c");
+                ModelState.AddModelError("", "Ingrese el nombre del director");
             }
             if (p.Pelicula.DurationMinutes <= 0)
             {
-                ModelState.AddModelError("", "d");
+                ModelState.AddModelError("", "Ingrese un numero mayor que 0");
             }
             if (!Context.Categories.Any(x => x.Id == p.Pelicula.CategoryId))
             {
-                ModelState.AddModelError("", "e");
+                ModelState.AddModelError("", "La categoria no existe");
             }
 
             if (ModelState.IsValid)
