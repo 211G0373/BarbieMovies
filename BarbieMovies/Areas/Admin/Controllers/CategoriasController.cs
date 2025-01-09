@@ -1,6 +1,7 @@
 ﻿using BarbieMovies.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BarbieMovies.Areas.Admin.Controllers
 {
@@ -99,15 +100,27 @@ namespace BarbieMovies.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Eliminar(Categories c)
         {
-            var cat = Context.Categories.FirstOrDefault(x => x.Id == c.Id);
+            var cat = Context.Categories.Include(x => x.Movies).FirstOrDefault(x => x.Id==c.Id);
+            
             if (cat != null)
             {
-                Context.Remove(cat);
-                Context.SaveChanges();
-                return RedirectToAction("Index");
+                if (cat.Movies.Any()) {
+
+                    ModelState.AddModelError("", "La categoria contiene peliculas");
+       
+                }
+
+                if (ModelState.IsValid)
+                {
+                    Context.Remove(cat);
+                    Context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+               
             }
             
-            return View();
+            return View(c);
         }
     }
 }
